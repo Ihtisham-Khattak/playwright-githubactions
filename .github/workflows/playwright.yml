@@ -14,10 +14,13 @@ jobs:
       with:
         node-version: 18
     - name: Install dependencies
-      run: yarn ci
+      run: rm -rf node_modules && yarn install --frozen-lockfile
 
     - name: Install Playwright Browsers
-      run: yarn playwright install --with-deps
+      run: yarn create playwright
+
+    - name: Check Playwright Version after Installation
+      run: yarn playwright --version
 
     - name: Run Playwright tests
       run: yarn playwright test
