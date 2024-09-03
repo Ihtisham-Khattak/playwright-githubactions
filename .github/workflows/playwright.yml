@@ -23,6 +23,9 @@ jobs:
       run: yarn playwright --version
 
     - name: Run Playwright tests
+      run: yarn playwright install
+    
+    - name: Run Playwright test
       run: yarn playwright test
       
     - uses: actions/upload-artifact@v4
