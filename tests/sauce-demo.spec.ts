@@ -23,6 +23,8 @@ test("Items in the list", async ({ page }) => {
   await inputPassword.fill("secret_sauce");
   await page.getByRole("button", { name: "Login" }).click();
 
+
+  //This is an Example changes
   const addToCartButtons: any = await page
     .getByRole("button", { name: "Add to cart" })
     .all();
